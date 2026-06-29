@@ -2,11 +2,14 @@ import os
 import requests
 import gradio as gr
 from pypdf import PdfReader
+from dotenv import load_dotenv
+
+# Local environment variables (.env file) load panrom
+load_dotenv()
 
 # Groq API Configuration
-GROQ_API_KEY = "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"  
-GROQ_URL = "https://api.groq.com/openai/v1/chat/completions"
-
+GROQ_API_KEY = os.getenv("GROQ_API_KEY")
+GROQ_URL = "https://api.groq.com/openai/v1/chat/completions" # Unga palaya full URL link template
 # Global list history maintain panna
 search_history = []
 
